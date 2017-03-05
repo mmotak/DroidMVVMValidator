@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DroidMVVMValidator.iml" filepath="$PROJECT_DIR$/DroidMVVMValidator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sampleapp/sampleapp.iml" filepath="$PROJECT_DIR$/sampleapp/sampleapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/validator/validator.iml" filepath="$PROJECT_DIR$/validator/validator.iml" />
     </modules>
   </component>

@@ -1,9 +1,9 @@
 package pl.com.mmotak.validator.rules;
 
-public class MinimumLenghtRule extends AbstractRule<String> {
+public class MinimumLengthRule extends AbstractRule<String> {
     private int min;
 
-    public MinimumLenghtRule(int min, String error) {
+    public MinimumLengthRule(int min, String error) {
         super(error);
         this.min = min;
     }
