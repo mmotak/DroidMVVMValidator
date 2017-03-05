@@ -21,7 +21,7 @@ You can use single Rule or many by RuleCommand.
     public ValidatedObservableField<String> userName = new ValidatedObservableField<>("",
             new RuleCommand.Builder<String>()
                     .withRule(new RegexRule("[a-z]+", "Only small letters")) // THE ORDER IS IMPORTANT!
-                    .withRule(new MinimumLenghtRule(3, "Three or more characters"))
+                    .withRule(new MinimumLengthRule(3, "Three or more characters"))
                     .withRule(new MaximumLengthRule(12, "No more then twelve characters"))
                     .build());
 ```
