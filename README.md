@@ -1,7 +1,5 @@
 # DroidMVVMValidator
 
-** under develop **
-
 Simple and light library to do validate observable fields with MVVM for android
 
 Usage
@@ -38,6 +36,22 @@ You can use single Rule or many by RuleCommand.
 			<Button
             android:visibility="@{viewModel.userName.valid ? View.VISIBLE : View.GONE}"/>
 ```
+
+Download
+--------
+
+You can depend on the library through Gradle:
+
+```groovy
+    repositories {
+        jcenter()
+    }
+
+dependencies {
+  compile 'pl.com.mmotak.validator:droid-mvvm-validator:1.0.0'
+}
+```
+
 
 License
 -------
