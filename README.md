@@ -1,4 +1,5 @@
 # DroidMVVMValidator
+[![Download](https://api.bintray.com/packages/mmotak/snipcorp/droid-mvvm-validator/images/download.svg)](https://bintray.com/mmotak/snipcorp/droid-mvvm-validator/_latestVersion)
 
 Simple and light library to do validate observable fields with MVVM for android
 
