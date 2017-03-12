@@ -1,6 +1,9 @@
-package pl.com.mmotak.sample;
+package pl.com.mmotak.sample.viewModels;
 
+import android.databinding.ObservableBoolean;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import pl.com.mmotak.validator.rules.MaximumLengthRule;
@@ -9,18 +12,21 @@ import pl.com.mmotak.validator.rules.RegexRule;
 import pl.com.mmotak.validator.RuleCommand;
 import pl.com.mmotak.validator.ValidatedObservableField;
 
-public class MainViewModel {
+public class MultiRulesExampleViewModel {
 
-    public ValidatedObservableField<String> userName = new ValidatedObservableField<>("",
+    public final ObservableBoolean passwordVisible = new ObservableBoolean(false);
+
+    public final ValidatedObservableField<String> userName = new ValidatedObservableField<>("",
             new RuleCommand.Builder<String>()
                     .withRule(new RegexRule("[a-z]+", "Only small letters")) // THE ORDER IS IMPORTANT!
                     .withRule(new MinimumLengthRule(3, "Three or more characters"))
                     .withRule(new MaximumLengthRule(12, "No more then twelve characters"))
                     .build());
 
-    public ValidatedObservableField<String> password = new ValidatedObservableField<>("",
+    public final ValidatedObservableField<String> password = new ValidatedObservableField<>("",
             new RuleCommand.Builder<String>()
-                    .withRule(new RegexRule(".*[A-Z]+.*", "Must contain capital letters")) // THE ORDER IS IMPORTANT!
+                    .withRule(new RegexRule("[\\S]+", "Whitespace characters not allowed")) // THE ORDER IS IMPORTANT!
+                    .withRule(new RegexRule(".*[A-Z]+.*", "Must contain capital letters"))
                     .withRule(new RegexRule(".*[0-9]+.*", "Must contain digits"))
                     .withRule(new RegexRule(".*[a-z]+.*", "Must contain small letters"))
                     .withRule(new MinimumLengthRule(8, "Eight or more characters"))

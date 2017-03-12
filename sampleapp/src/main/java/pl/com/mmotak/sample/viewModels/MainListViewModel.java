@@ -7,8 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.com.mmotak.sample.MainActivity;
+import pl.com.mmotak.sample.activities.ChangePasswordExampleActivity;
+import pl.com.mmotak.sample.activities.MultiRulesExampleActivity;
 import pl.com.mmotak.sample.R;
+import pl.com.mmotak.sample.activities.SingleRuleExampleActivity;
 import pl.com.mmotak.sample.adapters.ExampleRecycleViewAdapter;
 import pl.com.mmotak.sample.models.ItemExample;
 
@@ -33,10 +35,17 @@ public class MainListViewModel {
     private List<ItemExample> getList() {
         List<ItemExample> list = new ArrayList<>();
 
-        list.add(new ItemExample("Main", "Main", new Intent(context, MainActivity.class)));
-        list.add(new ItemExample("x", "543543321321", null));
-        list.add(new ItemExample("xz", "54354332153534 5 345", null));
-        list.add(new ItemExample("xcz", "543543", null));
+        list.add(new ItemExample("Multi Rules",
+                "[MultiRulesExampleActivity] Show multi rules example",
+                new Intent(context, MultiRulesExampleActivity.class)));
+
+        list.add(new ItemExample("Single Rules",
+                "[SingleRuleExampleActivity] Show single rules example",
+                new Intent(context, SingleRuleExampleActivity.class)));
+
+        list.add(new ItemExample("Other fields validate",
+                "[ChangePasswordExampleActivity] Show example to validate other fields",
+                new Intent(context, ChangePasswordExampleActivity.class)));
 
         return list;
     }

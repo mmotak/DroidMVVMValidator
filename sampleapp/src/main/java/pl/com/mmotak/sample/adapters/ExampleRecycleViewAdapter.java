@@ -1,7 +1,6 @@
 package pl.com.mmotak.sample.adapters;
 
 import android.support.annotation.LayoutRes;
-import android.support.v7.widget.RecyclerView;
 
 import pl.com.mmotak.sample.databinding.ItemExampleBinding;
 import pl.com.mmotak.sample.models.ItemExample;
