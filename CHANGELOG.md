@@ -34,7 +34,7 @@ CHANGELOG
 - added `Rule`
 - added `ValidatedObservableField`
 - added `RuleCommand`
-- added `AbstractRule` as base for Rule implementations
+- added `AbstractRule` as base for `Rule` implementations
 - added implementations for Rules: `RegexRule`, `MinimumLengthRule`, `MaximumLengthRule`
 
 **sample application:**
