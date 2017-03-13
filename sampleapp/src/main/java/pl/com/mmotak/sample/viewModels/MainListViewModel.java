@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.com.mmotak.sample.activities.ChangePasswordExampleActivity;
+import pl.com.mmotak.sample.activities.LambdaRulesExampleActivity;
 import pl.com.mmotak.sample.activities.LoginExampleActivity;
 import pl.com.mmotak.sample.activities.MultiRulesExampleActivity;
 import pl.com.mmotak.sample.R;
@@ -51,6 +52,10 @@ public class MainListViewModel {
         list.add(new ItemExample("OR rules validate",
                 "[LoginExampleActivity] Show example with OR rules",
                 new Intent(context, LoginExampleActivity.class)));
+
+        list.add(new ItemExample("Show how use lambda",
+                "[LambdaRulesExampleActivity] Show creating rules with lambda",
+                new Intent(context, LambdaRulesExampleActivity.class)));
 
         return list;
     }

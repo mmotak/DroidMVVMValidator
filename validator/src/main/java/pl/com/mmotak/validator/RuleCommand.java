@@ -4,6 +4,8 @@ package pl.com.mmotak.validator;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.com.mmotak.validator.rules.ValidatorRule;
+
 public class RuleCommand<T> implements Rule<T> {
 
     private List<Rule<T>> rules = new ArrayList<>();
@@ -38,6 +40,11 @@ public class RuleCommand<T> implements Rule<T> {
 
         public Builder<T> withRule(Rule<T> rule) {
             rules.add(rule);
+            return this;
+        }
+
+        public Builder<T> withRule(Valid<T> validator, final String error) {
+            rules.add(new ValidatorRule<T>(validator, error));
             return this;
         }
     }

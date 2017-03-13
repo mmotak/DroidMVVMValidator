@@ -1,16 +1,14 @@
 package pl.com.mmotak.sample.viewModels;
 
 import android.databinding.ObservableBoolean;
-import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
+import pl.com.mmotak.validator.RuleCommand;
+import pl.com.mmotak.validator.ValidatedObservableField;
 import pl.com.mmotak.validator.rules.MaximumLengthRule;
 import pl.com.mmotak.validator.rules.MinimumLengthRule;
 import pl.com.mmotak.validator.rules.RegexRule;
-import pl.com.mmotak.validator.RuleCommand;
-import pl.com.mmotak.validator.ValidatedObservableField;
 
 public class MultiRulesExampleViewModel {
 

@@ -51,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@={viewModel.userName.value}"
-                    android:hint="User login or email" />
+                    android:hint="@string/user_login_or_email" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -68,7 +68,7 @@
                     android:inputType="textPassword"
                     android:text="@={viewModel.password.value}"
                     app:passwordChangeVisibility="@{viewModel.passwordVisible}"
-                    android:hint="User password" />
+                    android:hint="@string/user_password" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="@={viewModel.passwordVisible}"
-                android:text="Show password" />
+                android:text="@string/show_password" />
         </LinearLayout>
 
         <android.support.design.widget.FloatingActionButton

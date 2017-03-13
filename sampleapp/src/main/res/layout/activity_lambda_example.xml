@@ -4,19 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <import type="android.view.View" />
-
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="pl.com.mmotak.sample.viewModels.SingleRuleExampleViewModel" />
+            type="pl.com.mmotak.sample.viewModels.LambdaRulesExampleViewModel"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="pl.com.mmotak.sample.activities.SingleRuleExampleActivity">
+        tools:context="pl.com.mmotak.validator.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -48,31 +46,49 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:setError="@{viewModel.name.errorMessage}">
+                app:setError="@{viewModel.userName.errorMessage}">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/your_name"
-                    android:text="@={viewModel.name.value}" />
+                    android:text="@={viewModel.userName.value}"
+                    android:hint="@string/user_name" />
 
             </android.support.design.widget.TextInputLayout>
+
 
             <android.support.design.widget.TextInputLayout
+                app:hintAnimationEnabled="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:setError="@{viewModel.age.errorMessage}">
+                app:setError="@{viewModel.password.errorMessage}">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:hint="@string/your_age"
-                    android:maxLength="3"
-                    android:text="@={viewModel.age.value}" />
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.password.value}"
+                    app:passwordChangeVisibility="@{viewModel.passwordVisible}"
+                    android:hint="@string/user_password" />
 
             </android.support.design.widget.TextInputLayout>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={viewModel.passwordVisible}"
+                android:text="@string/show_password" />
         </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:visibility="@{viewModel.userName.valid &amp;&amp; viewModel.password.valid ? View.VISIBLE : View.GONE}"
+            android:onClick="@{viewModel::onViewClick}"
+            app:srcCompat="@android:drawable/ic_dialog_email" />
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

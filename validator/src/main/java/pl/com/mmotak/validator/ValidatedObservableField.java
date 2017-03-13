@@ -33,7 +33,7 @@ public class ValidatedObservableField<T> extends BaseObservable {
 
     /***
      * Create new ValidatedObservableField, will not be validate in constructor
-     * <br/> use {@link #setRule(Rule) setRule} to set the rule later
+     * <br> use {@link #setRule(Rule) setRule} to set the rule later
      * @param value - starting value
      */
     public ValidatedObservableField(T value) {
@@ -42,8 +42,8 @@ public class ValidatedObservableField<T> extends BaseObservable {
 
     /***
      * Create new ValidatedObservableField, will not be validate in constructor
-     * <br/> use {@link #setRule(Rule) setRule} to set the rule later
-     * <br/> use {@link #setValue(T) setValue} to set the value later
+     * <br> use {@link #setRule(Rule) setRule} to set the rule later
+     * <br> use {@link #setValue(Object) setValue} to set the value later
      */
     public ValidatedObservableField() {
     }
@@ -78,8 +78,8 @@ public class ValidatedObservableField<T> extends BaseObservable {
 
     /***
      * Tells if field is valid.
-     * <br/> return the saved value
-     * <br/> have to call {@link #validate() validate} before to get correct value
+     * <br> return the saved value
+     * <br> have to call {@link #validate() validate} before to get correct value
      * @return - the saved information about is this field valid
      */
     public boolean isValid() {
@@ -88,7 +88,7 @@ public class ValidatedObservableField<T> extends BaseObservable {
 
     /***
      * Return the error message.
-     * <br/> call {@link #validate() validate} before to get correct value
+     * <br> call {@link #validate() validate} before to get correct value
      * @return - null if no message or error massage returned by {@link Rule#getErrorMessage()}.
      */
     public String getErrorMessage() {
@@ -97,8 +97,8 @@ public class ValidatedObservableField<T> extends BaseObservable {
 
     /***
      * Validate the field it there is a rule {@link Rule} to valid it.
-     * <br/> Set the error message from {@link Rule#getErrorMessage()}
-     * <br/> This method is called by: {@link #setValue(Object)} and in constructor {@link #ValidatedObservableField(T, Rule<T>,boolean)}
+     * <br> Set the error message from {@link Rule#getErrorMessage()}
+     * <br> This method is called by: {@link #setValue(Object)} and in constructor {@link #ValidatedObservableField(Object, Rule, boolean)}
      */
     public void validate() {
         if (rule != null) {
@@ -109,7 +109,7 @@ public class ValidatedObservableField<T> extends BaseObservable {
 
     /***
      * Hide the error message.
-     * <br/> the field still can be not valid!
+     * <br> the field still can be not valid!
      */
     public void hideErrorMessage() {
         errorMessage = null;
