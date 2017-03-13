@@ -9,10 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d567d886-8217-4a7a-b34f-28e937cf58ae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/LoginExampleViewModel.java" afterPath="$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/LoginExampleViewModel.java" />
-    </list>
+    <list default="true" id="d567d886-8217-4a7a-b34f-28e937cf58ae" name="Default" comment="" />
     <ignored path="Sample.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
