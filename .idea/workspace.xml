@@ -11,9 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d567d886-8217-4a7a-b34f-28e937cf58ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampleapp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/sampleapp/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/MainListViewModel.java" afterPath="$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/MainListViewModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validator/validator.iml" afterPath="$PROJECT_DIR$/validator/validator.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/LoginExampleViewModel.java" afterPath="$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/LoginExampleViewModel.java" />
     </list>
     <ignored path="Sample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +73,8 @@
       <file leaf-file-name="LoginExampleViewModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/LoginExampleViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state relative-caret-position="488">
+              <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -4851,8 +4849,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sampleapp/src/main/java/pl/com/mmotak/sample/viewModels/LoginExampleViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        <state relative-caret-position="488">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
