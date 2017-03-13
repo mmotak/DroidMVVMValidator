@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-1.0.1 - under develop
+1.0.1
 --------
 13.03.2017
+**Released**
 
 **library:**
 - FIXED BUG: `android:allowBackup="false"` in `AndroidManifest.xml`
