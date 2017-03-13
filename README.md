@@ -53,6 +53,11 @@ dependencies {
 }
 ```
 
+Changelog
+---------
+
+See [CHANGELOG.md](CHANGELOG.md) file.
+
 
 License
 -------
