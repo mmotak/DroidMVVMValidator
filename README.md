@@ -25,6 +25,17 @@ You can use single Rule or many by RuleCommand.
                     .build());
 ```
 
+or using lambdas:
+
+```java
+    public ValidatedObservableField<String> userName = new ValidatedObservableField<>("",
+            new RuleCommand.Builder<String>()
+                    .withRule(s -> s != null && s.matches("[\\S]+"), "Whitespace characters not allowed") // THE ORDER IS IMPORTANT!
+                    .withRule(s -> s != null && s.length() >= 3, "Three or more characters")
+                    .withRule(s -> s != null && s.length() <= 12, "No more then twelve characters")
+                    .build());
+```
+
 ```xml
             <android.support.design.widget.TextInputLayout
                 app:setError="@{viewModel.userName.errorMessage}">
@@ -47,9 +58,15 @@ You can depend on the library through Gradle:
     repositories {
         jcenter()
     }
+    
+    
+    dataBinding {
+        enabled = true
+    }
+
 
 dependencies {
-  compile 'pl.com.mmotak.validator:droid-mvvm-validator:1.0.0'
+  compile 'pl.com.mmotak.validator:droid-mvvm-validator:1.0.1'
 }
 ```
 

@@ -1,16 +1,31 @@
 CHANGELOG
 =========
 
-1.0.1 - under develop
+1.0.1
 --------
+13.03.2017
+**Released**
+
+**library:**
+- FIXED BUG: `android:allowBackup="false"` in `AndroidManifest.xml`
+- fixed building errors while making aar file
+- added `Valid` imterface
+- added `ValidatorRule` class - now we can create `Rule` with lambda
+- added method `withRule` to `RuleCommand.Builder` to add `Rule` created with lambda
+
+**sample application:**
+- added example with rule using OR expression
+- fix lint warnings
+- added example to show how create `Rule` with lambda
+
 12.03.2017
 
 - added this changelog
 
 **library:**
 - start adding test
-- FIX BUG in `ValidatedObservableField` in `setValue`
-- make `ValidatedObservableField.validate()` public
+- FIXED BUG in `ValidatedObservableField` in `setValue`
+- made `ValidatedObservableField.validate()` public
 - added new constructor to `ValidatedObservableField`
 - added javadocs to some classes
 - added tests for `ValidatedObservableField`
