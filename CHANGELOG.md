@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+1.0.2 - **UNDER DEVELOP**
+--------
+19.03.2017
+- added travis 
+- added code cov
+- fix some configurator to work travis
+
 1.0.1
 --------
 13.03.2017
