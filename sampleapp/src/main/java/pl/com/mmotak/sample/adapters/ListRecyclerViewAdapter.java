@@ -25,7 +25,7 @@ public abstract class ListRecyclerViewAdapter<ITEM,BINDING extends android.datab
 
     @Override
     public ListRecyclerViewAdapter.ViewHolder<BINDING> onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ListRecyclerViewAdapter.ViewHolder<BINDING>((BINDING) DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), layoutId, parent, false));
+        return new ListRecyclerViewAdapter.ViewHolder<BINDING>(DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), layoutId, parent, false));
     }
 
     @Override

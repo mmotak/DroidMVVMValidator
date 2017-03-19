@@ -1,0 +1,25 @@
+language: android
+
+jdk: oraclejdk8
+
+env:
+  global:
+    - MALLOC_ARENA_MAX=2
+    - ADB_INSTALL_TIMEOUT=10
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-23.0.1
+    - android-23
+    - extra-android-m2repository
+    - extra-google-m2repository
+
+install:
+  - true
+
+sudo: required
+
+script:
+  - ./gradlew clean build check
