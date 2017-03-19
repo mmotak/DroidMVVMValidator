@@ -12,8 +12,16 @@ public class FormValidatedObservableBoolean extends ObservableBoolean {
     private final ValidatedObservableField<?>[] fields;
 
     public FormValidatedObservableBoolean(final ValidatedObservableField<?>... fields) {
-        this.fields = fields;
-        for (final ValidatedObservableField field : fields) {
+//        if (fields == null) {
+//            throw new IllegalArgumentException("You cannot set null as parameter");
+//        }
+        if (fields == null) {
+            this.fields = new ValidatedObservableField[]{};
+        } else {
+            this.fields = fields;
+        }
+
+        for (final ValidatedObservableField field : this.fields) {
             field.addOnPropertyChangedCallback(new OnPropertyChangedCallback() {
                 @Override
                 public void onPropertyChanged(Observable observable, int i) {
@@ -21,10 +29,12 @@ public class FormValidatedObservableBoolean extends ObservableBoolean {
                 }
             });
         }
+
+        set(areAllFieldsValid());
     }
 
     private boolean areAllFieldsValid() {
-        boolean isValid = true;
+        boolean isValid = fields.length > 0;
         for (ValidatedObservableField field : fields) {
             isValid &= field.isValid();
             if (!isValid) {

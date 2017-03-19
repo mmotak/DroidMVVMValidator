@@ -132,4 +132,13 @@ public class ValidatedObservableFieldCreatedByTwoArgsConstructorShould {
         field.setRule(ruleDivBySeven);
         assertFalse(field.isValid());
     }
+
+    @Test
+    public void setNewErrorMessageAfterValid() {
+        field.setValue(new Integer(9));
+        field.hideErrorMessage();
+        field.validate();
+        assertNotNull(field.getErrorMessage());
+    }
+
 }
