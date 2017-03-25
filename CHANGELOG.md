@@ -3,10 +3,19 @@ CHANGELOG
 
 1.0.2 - **UNDER DEVELOP**
 --------
+25.03.2017
+
+**library:**
+- added `setErrorMessage` to `ValidatedObservableField`
+- added call `notifyChange` into: `validate`, `hideErrorMessage`
+- updated `validate`, now it return true if there was an rule to validate
+- added more tests
+
 19.03.2017
+
 - added travis 
 - added code cov
-- fix some configurator to work travis
+- fix some configurator for travis
 
 1.0.1
 --------
