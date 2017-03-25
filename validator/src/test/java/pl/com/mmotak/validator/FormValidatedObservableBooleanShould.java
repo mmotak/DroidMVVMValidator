@@ -80,7 +80,6 @@ public class FormValidatedObservableBooleanShould {
         assertTrue(form.get());
     }
 
-
     @Test
     public void notBecomeValidWhenAtLeastOneParameterIsInvalid() {
         ValidatedObservableField<Integer> age1 = new ValidatedObservableField<Integer>(1, ageRule, true);
@@ -92,5 +91,15 @@ public class FormValidatedObservableBooleanShould {
         age2.setValue(1);
 
         assertFalse(form.get());
+    }
+
+    @Test
+    public void stillBeValidIfTheErrorMessageWasSetManually() {
+        ValidatedObservableField<Integer> age = new ValidatedObservableField<Integer>(45, ageRule, true);
+        form = new FormValidatedObservableBoolean(age);
+
+        age.setErrorMessage("Something went wrong !");
+
+        assertTrue(form.get());
     }
 }

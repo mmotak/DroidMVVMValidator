@@ -55,8 +55,9 @@ public class ValidatedObservableField<T> extends BaseObservable {
     public void setValue(T value) {
         if (value != null && !value.equals(this.value)) {
             this.value = value;
-            validate();
-            notifyChange();
+            if (!validate()) {
+                notifyChange();
+            }
         }
     }
 
@@ -96,22 +97,46 @@ public class ValidatedObservableField<T> extends BaseObservable {
     }
 
     /***
-     * Validate the field it there is a rule {@link Rule} to valid it.
-     * <br> Set the error message from {@link Rule#getErrorMessage()}
-     * <br> This method is called by: {@link #setValue(Object)} and in constructor {@link #ValidatedObservableField(Object, Rule, boolean)}
+     * Set the new error message.
+     * <br> If the new error message is not the same as current one it will be changed.
+     * <br> Also call {@link BaseObservable#notifyChange}
+     * @param errorMessage - the new error message
      */
-    public void validate() {
-        if (rule != null) {
-            isValid = rule.isValid(getValue());
-            errorMessage = isValid ? null : rule.getErrorMessage();
+    public void setErrorMessage(String errorMessage) {
+        if (errorMessage == null) {
+            hideErrorMessage();
+        } else if (!errorMessage.equals(this.errorMessage)) {
+            this.errorMessage = errorMessage;
+            notifyChange();
         }
     }
 
     /***
+     * Validate the field it there is a rule {@link Rule} to valid it.
+     * <br> Set the error message from {@link Rule#getErrorMessage()}
+     * <br> This method is called by: {@link #setValue(Object)} and in constructor {@link #ValidatedObservableField(Object, Rule, boolean)}
+     * <br> Also call {@link BaseObservable#notifyChange}
+     * @return - true if there is a rule {@link Rule} and {@link BaseObservable#notifyChange} was called
+     */
+    public boolean validate() {
+        if (rule != null) {
+            isValid = rule.isValid(getValue());
+            errorMessage = isValid ? null : rule.getErrorMessage();
+            notifyChange();
+            return true;
+        }
+        return false;
+    }
+
+    /***
      * Hide the error message.
+     * <br> Also call {@link BaseObservable#notifyChange}
      * <br> the field still can be not valid!
      */
     public void hideErrorMessage() {
-        errorMessage = null;
+        if (errorMessage != null) {
+            errorMessage = null;
+            notifyChange();
+        }
     }
 }

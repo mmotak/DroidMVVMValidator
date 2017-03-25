@@ -12,15 +12,15 @@ public class FormValidatedObservableBoolean extends ObservableBoolean {
     private final ValidatedObservableField<?>[] fields;
 
     public FormValidatedObservableBoolean(final ValidatedObservableField<?>... fields) {
-//        if (fields == null) {
-//            throw new IllegalArgumentException("You cannot set null as parameter");
-//        }
         if (fields == null) {
             this.fields = new ValidatedObservableField[]{};
         } else {
             this.fields = fields;
         }
+        init();
+    }
 
+    private void init() {
         for (final ValidatedObservableField field : this.fields) {
             field.addOnPropertyChangedCallback(new OnPropertyChangedCallback() {
                 @Override

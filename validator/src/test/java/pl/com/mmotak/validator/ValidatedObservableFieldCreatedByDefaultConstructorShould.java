@@ -1,7 +1,10 @@
 package pl.com.mmotak.validator;
 
+import android.databinding.Observable;
+
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -44,5 +47,56 @@ public class ValidatedObservableFieldCreatedByDefaultConstructorShould {
         field.setValue(new Object());
 
         assertNull(field.getErrorMessage());
+    }
+
+    @Test
+    public void returnNewErrorMessageAfterSetNewErrorMessage() {
+        String newErrorMessage = "newErrorMessage";
+
+        field.setErrorMessage(newErrorMessage);
+        assertEquals(newErrorMessage, field.getErrorMessage());
+    }
+
+    @Test
+    public void notCallNotifyChangeForSetErrorMessageWithNullValue() {
+        field.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
+            @Override
+            public void onPropertyChanged(Observable observable, int i) {
+                fail("Should not get here");
+            }
+        });
+
+        field.setErrorMessage(null);
+    }
+
+    @Test
+    public void callNotifyChangeForSetErrorMessageWithNullValueIfPreviousErrorMessageWasNotNull() {
+        final String newErrorMessage = "newErrorMessage";
+        field.setErrorMessage(newErrorMessage);
+
+        field.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
+            @Override
+            public void onPropertyChanged(Observable observable, int i) {
+                assertNull(field.getErrorMessage());
+            }
+        });
+
+        field.setErrorMessage(null);
+        assertNull(field.getErrorMessage());
+    }
+
+    @Test
+    public void notCallNotifyChangeForSetErrorMessageWithTheSameAsCurrentOne() {
+        final String newErrorMessage = "newErrorMessage";
+        field.setErrorMessage(newErrorMessage);
+
+        field.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
+            @Override
+            public void onPropertyChanged(Observable observable, int i) {
+                fail("Should not get here");
+            }
+        });
+
+        field.setErrorMessage(newErrorMessage);
     }
 }

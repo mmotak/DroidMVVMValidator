@@ -43,7 +43,6 @@ public class ValidatedObservableFieldCreatedByFullConstructorShould {
         assertNull(field.getErrorMessage());
     }
 
-
     @Test
     public void notBeValidatedIfCreatedWithInvalidStartValue() {
         field = new ValidatedObservableField<>(invalidStartObject, ruleDivByTwo, true);
@@ -60,5 +59,59 @@ public class ValidatedObservableFieldCreatedByFullConstructorShould {
     public void returnCorrectErrorMessageIfCreatedWithInvalidStartValue() {
         field = new ValidatedObservableField<>(invalidStartObject, ruleDivByTwo, true);
         assertEquals(errorMessage, field.getErrorMessage());
+    }
+
+    @Test
+    public void stillBeValidIfWasValidBeforeSetErrorMessage() {
+        field = new ValidatedObservableField<>(validStartObject, ruleDivByTwo, true);
+
+        assertEquals(null, field.getErrorMessage());
+        assertTrue(field.isValid());
+
+        String newErrorMessage = "New Error Message";
+        field.setErrorMessage(newErrorMessage);
+
+        assertEquals(newErrorMessage, field.getErrorMessage());
+        assertTrue(field.isValid());
+    }
+
+    @Test
+    public void stillNotBeValidIfWasNotValidBeforeSetErrorMessage() {
+        field = new ValidatedObservableField<>(invalidStartObject, ruleDivByTwo, true);
+
+        assertEquals(errorMessage, field.getErrorMessage());
+        assertFalse(field.isValid());
+
+        String newErrorMessage = "New Error Message";
+        field.setErrorMessage(newErrorMessage);
+
+        assertEquals(newErrorMessage, field.getErrorMessage());
+        assertFalse(field.isValid());
+    }
+
+    @Test
+    public void becomeValidIfWasValidAfterSetErrorAndCallValidate() {
+        field = new ValidatedObservableField<>(validStartObject, ruleDivByTwo, true);
+
+        String newErrorMessage = "New Error Message";
+        field.setErrorMessage(newErrorMessage);
+
+        field.validate();
+
+        assertEquals(null, field.getErrorMessage());
+        assertTrue(field.isValid());
+    }
+
+    @Test
+    public void becomeInvalidIfWasInvalidAfterSetErrorAndCallValidate() {
+        field = new ValidatedObservableField<>(invalidStartObject, ruleDivByTwo, true);
+
+        String newErrorMessage = "New Error Message";
+        field.setErrorMessage(newErrorMessage);
+
+        field.validate();
+
+        assertEquals(errorMessage, field.getErrorMessage());
+        assertFalse(field.isValid());
     }
 }
