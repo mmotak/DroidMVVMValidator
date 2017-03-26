@@ -1,8 +1,11 @@
 CHANGELOG
 =========
 
-1.0.2 - **UNDER DEVELOP**
+1.0.2
 --------
+26.03.2017
+**Released**
+
 25.03.2017
 
 **library:**
