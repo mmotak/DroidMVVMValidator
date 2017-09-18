@@ -68,7 +68,7 @@ You can depend on the library through Gradle:
 
 
 dependencies {
-  compile 'pl.com.mmotak.validator:droid-mvvm-validator:1.0.1'
+  compile 'pl.com.mmotak.validator:droid-mvvm-validator:1.0.2'
 }
 ```
 
