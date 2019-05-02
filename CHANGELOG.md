@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+2.0.0
+--------
+02.05.2019
+**Released**
+
+01.05.2019
+**library:**
+- migrate to new gradle
+- migrate to androidx
+- change min sdk to 14
+
+**sample application:**
+- migrate to new gradle
+- migrate to androidx
+
 1.0.2
 --------
 26.03.2017

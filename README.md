@@ -56,6 +56,24 @@ Download
 
 You can depend on the library through Gradle:
 
+The new version androidx
+```groovy
+    repositories {
+        jcenter()
+    }
+
+
+    dataBinding {
+        enabled = true
+    }
+
+
+dependencies {
+  compile 'pl.com.mmotak.validator:droid-mvvm-validator:2.0.0'
+}
+```
+
+The old version
 ```groovy
     repositories {
         jcenter()
