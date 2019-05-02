@@ -1,6 +1,6 @@
 package pl.com.mmotak.sample.activities;
 
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import pl.com.mmotak.sample.R;
 import pl.com.mmotak.sample.databinding.ActivityChangePasswordBinding;

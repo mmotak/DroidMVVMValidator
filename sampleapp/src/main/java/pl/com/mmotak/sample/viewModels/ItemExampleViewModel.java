@@ -1,8 +1,9 @@
 package pl.com.mmotak.sample.viewModels;
 
 import android.content.Intent;
-import android.databinding.ObservableField;
 import android.view.View;
+
+import androidx.databinding.ObservableField;
 
 import pl.com.mmotak.sample.models.ItemExample;
 

@@ -1,10 +1,12 @@
 package pl.com.mmotak.sample.adapters;
 
-import android.databinding.DataBindingUtil;
-import android.support.annotation.LayoutRes;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import androidx.annotation.LayoutRes;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.List;
  * Created by mmotak on 03.01.2017.
  */
 
-public abstract class ListRecyclerViewAdapter<ITEM,BINDING extends android.databinding.ViewDataBinding>
+public abstract class ListRecyclerViewAdapter<ITEM,BINDING extends ViewDataBinding>
         extends RecyclerView.Adapter<ListRecyclerViewAdapter.ViewHolder<BINDING>>{
 
     private List<ITEM> list = new ArrayList<ITEM>();
@@ -50,7 +52,7 @@ public abstract class ListRecyclerViewAdapter<ITEM,BINDING extends android.datab
         return list.get(position);
     }
 
-    static class ViewHolder<BINDING extends android.databinding.ViewDataBinding> extends RecyclerView.ViewHolder {
+    static class ViewHolder<BINDING extends ViewDataBinding> extends RecyclerView.ViewHolder {
         final BINDING binding;
 
         ViewHolder(BINDING binding) {

@@ -1,8 +1,9 @@
 package pl.com.mmotak.sample.viewModels;
 
-import android.databinding.ObservableBoolean;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.databinding.ObservableBoolean;
 
 import pl.com.mmotak.validator.Rule;
 import pl.com.mmotak.validator.RuleCommand;

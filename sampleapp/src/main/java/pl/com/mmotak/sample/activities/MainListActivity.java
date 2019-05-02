@@ -1,9 +1,11 @@
 package pl.com.mmotak.sample.activities;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import pl.com.mmotak.sample.R;
 import pl.com.mmotak.sample.databinding.ActivityMainListBinding;

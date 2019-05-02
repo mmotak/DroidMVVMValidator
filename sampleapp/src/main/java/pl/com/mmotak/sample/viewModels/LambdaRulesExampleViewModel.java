@@ -1,6 +1,6 @@
 package pl.com.mmotak.sample.viewModels;
 
-import android.databinding.ObservableBoolean;
+import androidx.databinding.ObservableBoolean;
 import android.view.View;
 import android.widget.Toast;
 

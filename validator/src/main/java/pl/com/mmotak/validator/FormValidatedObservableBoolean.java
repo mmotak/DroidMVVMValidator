@@ -1,7 +1,8 @@
 package pl.com.mmotak.validator;
 
-import android.databinding.Observable;
-import android.databinding.ObservableBoolean;
+
+import androidx.databinding.Observable;
+import androidx.databinding.ObservableBoolean;
 
 /**
  * Created by Maciej on 2017-03-12.

@@ -1,6 +1,6 @@
 package pl.com.mmotak.validator;
 
-import android.databinding.Observable;
+import androidx.databinding.Observable;
 
 import org.junit.Before;
 import org.junit.Test;

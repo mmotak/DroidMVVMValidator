@@ -1,6 +1,7 @@
 package pl.com.mmotak.validator;
 
-import android.databinding.BaseObservable;
+
+import androidx.databinding.BaseObservable;
 
 public class ValidatedObservableField<T> extends BaseObservable {
     private Rule<T> rule;

@@ -1,6 +1,7 @@
 package pl.com.mmotak.sample.adapters;
 
-import android.support.annotation.LayoutRes;
+
+import androidx.annotation.LayoutRes;
 
 import pl.com.mmotak.sample.databinding.ItemExampleBinding;
 import pl.com.mmotak.sample.models.ItemExample;

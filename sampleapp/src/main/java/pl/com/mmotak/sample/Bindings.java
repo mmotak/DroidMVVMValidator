@@ -1,11 +1,12 @@
 package pl.com.mmotak.sample;
 
-import android.databinding.BindingAdapter;
-import android.databinding.InverseBindingAdapter;
-import android.support.design.widget.TextInputEditText;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.InverseBindingAdapter;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * Created by Maciej on 2017-03-11.
@@ -34,7 +35,7 @@ public class Bindings {
         return null;
     }
 
-    @BindingAdapter(value = {"app:passwordChangeVisibility"})
+    @BindingAdapter(value = {"passwordChangeVisibility"})
     public static void passwordChangeVisibility(TextInputEditText inputEditText, boolean isVisible) {
         inputEditText.setTransformationMethod(isVisible ? HideReturnsTransformationMethod.getInstance() : PasswordTransformationMethod.getInstance());
         inputEditText.setSelection(inputEditText.getText().length());

@@ -2,16 +2,17 @@ package pl.com.mmotak.sample.viewModels;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.com.mmotak.sample.R;
 import pl.com.mmotak.sample.activities.ChangePasswordExampleActivity;
 import pl.com.mmotak.sample.activities.LambdaRulesExampleActivity;
 import pl.com.mmotak.sample.activities.LoginExampleActivity;
 import pl.com.mmotak.sample.activities.MultiRulesExampleActivity;
-import pl.com.mmotak.sample.R;
 import pl.com.mmotak.sample.activities.SingleRuleExampleActivity;
 import pl.com.mmotak.sample.adapters.ExampleRecycleViewAdapter;
 import pl.com.mmotak.sample.models.ItemExample;
